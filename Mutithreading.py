@@ -11,7 +11,6 @@ start = time.time()
 
 cv1 = threading.Condition()
 num=0
-
 def first(cv1, th):
     global num
     flag=False
@@ -24,12 +23,9 @@ def first(cv1, th):
 
 t1 = threading.Thread(target=first, args=(cv1, 't1'))
 t2 = threading.Thread(target=first, args=(cv1, 't2'))
-
 t1.start()
 t2.start()
-
 t1.join()
-
 end = time.time()
 time_taken = end - start
 print('Time: ',time_taken)
