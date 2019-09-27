@@ -13,7 +13,6 @@ cv1 = threading.Condition()
 num=0
 def first(cv1, th):
     global num
-    flag=False
     while(num<10000):
         with cv1:
             num+=1
